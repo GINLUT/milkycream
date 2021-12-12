@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="keywords" content="heladeria, waffles, milkshake, postre, catering, bucaramanga">
+        <meta name="description" content="¿Tienes comentarios, felicitaciones o sugerencias?, ¡Escríbenos, nos encanta saber de ti! ">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
+        <link rel="stylesheet" href="../css/style.css">
+        <title>Milkycream - Contáctanos</title>
+    </head>
+    <body>
+        <header> <!--Primera sección: Logo, título y menú--> <!-- inicio encabezado-->
+            <div>
+                <a class="navbar-brand titulo"  href="../index.html">Milkycream</a>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light ">
+                <div class="container-fluid">
+                    <div>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex align-items-center">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                          </li>     
+                          <li class="nav-item">
+                            <a class="nav-link" href="productos.html">Productos</a>
+                         </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="pedidos_a_tu_medida.html">Pedidos a tu Medida</a>
+                      </li>                      
+                      <li class="nav-item">
+                        <a class="nav-link" href="preguntas_frecuentes.html">Preguntas Frecuentes</a>
+                      </li>                      </li>                      
+                      <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn  btn-info" type="submit">Search</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+        </header> <!--fin de Primera Sección-->
+
+
+        <main><!--Segunda sección, Principal: Formulario-->
+            <h1 class="fst-italic">Contáctanos</h1>
+            <br>
+            <section class="datos row">
+                <div class="mensajeBonito col-lg-6 col-md-12">
+                    <p class="textoContacto">
+                        Tu opinión es lo más importante para nosotros.
+                        <br>
+                        <br>
+                        Si tienes algún comentario a sugerencia, completa este formulario para poder contactarnos contigo.
+                        <br>
+                        <br>
+                        ¡Escríbenos!
+                    </p>
+                </div>
+                <div class="formularioContacto col-lg-6 col-md-12">
+                    <form>
+                    <div class="input-group mb-1"> <!--Datos a rellenar en formulario-->
+                        <label for="nombre_apellido" class="input-group-text">Nombre y Apellido:</label>
+                        <input type="text" class="form-control"class="form-control" name="nombre_apellido"/>  
+                    </div>
+                    <div class="input-group mb-1">
+                        <label for="email" class="input-group-text">Correo electrónico:</label>
+                        <input type="email" class="form-control" name="email"/>  
+                    </div>
+                    <div class="input-group mb-1">
+                        <label for="motivo" class="input-group-text">Motivo:</label>
+                        <select name="motivo" class="form-control">
+                            <option value="C">Consultas</option>
+                            <option value="S">Sugerencias</option>
+                            <option value="F">Felicitaciones</option>
+                            <option value="R">Reclamos</option>
+                        </select>
+                    </div>
+                    <div class="input-group mb-1">
+                        <label for="mensaje" class="input-group-text" class="form-control">Mensaje:</label>
+                    </div>
+                    <div class="input-group mb-1">
+                        <textarea rows="5" cols="40" class="form-control"></textarea>
+                    </div>
+                    <div>
+                        <input type="checkbox" name="acepta"value="1"/>
+                        Acepto los términos y condiciones
+                    </div> 
+                    <input type="submit" class="boton" value="Enviar mensaje"/>
+                    <input type="reset" class="boton" value="Borrar"/>   
+                </form>
+                </div>
+
+            </section>
+        </main> <!--fin de Segunda Sección-->
+
+        <article class="ubicacion row"><!--Tercera sección, Encuéntranos: Dirección, Mapa y Horarios-->
+            <h2  class="text-start">¡Encuéntranos!</h2>
+                <div class="col-12 col-md">
+                    <h4>Dirección</h4>
+                    <p class="text-center">Floridablanca, Bucaramanga</p>
+                </div>
+                <div class="col-12 col-md">
+                    <h4>Google Maps</h4>
+                    <iframe  class="mapa" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13308.075437581601!2d-70.65736925!3d-33.500886449999975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662dad7c1a08d65%3A0xe001f19e5b491747!2sEasy%20Ochagav%C3%ADa!5e0!3m2!1ses-419!2scl!4v1635706217537!5m2!1ses-419!2scl"; style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>   
+
+                <div class="col-12 col-md">      
+                    <h4>Horarios</h4>
+                    <p class="text-center">Lunes a Domingo: 09:00 - 18:00 hrs. </p>
+                    <p class="text-center">¡TE ESPERAMOS! </p>
+                </div>
+            </section>
+        </article><!--fin de Tercera Sección-->
+
+        <footer class="row footer"><!--Cuarta Sección: Cierre de Página-->
+            <div class="col-6 col-md">
+                <a href="../index.html">
+                    <img class="logoFooter" src="../images/logoMilky.jpeg" alt="Logo Milkycream">
+                </a>
+            </div>
+            <div class="col-6 col-md">
+                <h3>Contáctanos</h3>
+                <ul class="list-unstyled text-small">
+                    <li>
+                        <a class="dark-link" href="#">Dirección</a>
+                    </li>
+                    <li>
+                        <a class="dark-link" href="#">Teléfono</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h3>Redes Sociales</h3>
+                <ul class="list-unstyled text-small">
+                    <li>
+                        <a class="dark-link" href="#">Instagram</a>
+                    </li>
+                    <li>
+                        <a class="dark-link" href="#">Facebook</a>
+                    </li>
+                    <li>
+                        <a class="dark-link" href="#">Twitter</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+                <h3>Mi cuenta</h3>
+                <ul class="list-unstyled text-small">
+                    <li>
+                        <a class="dark-link" href="#">Pedir</a>
+                    </li>
+                    <li>
+                        <a class="dark-link" href="#">Mis pedidos</a>
+                    </li>
+                    <li>
+                        <a class="dark-link" href="#">Mis direcciones</a>
+                    </li>
+                </ul>
+            </div>
+            <h4 class="d-flex justify-content-center fs-6">Copyright 2021 - Desarrollado por Lutfallah</h4>
+        </footer><!--fin de Cuarta Sección-->
+        <!--Link JavaScript-->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    </body>
+</html>

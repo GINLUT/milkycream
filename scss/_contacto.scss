@@ -1,0 +1,22 @@
+/*---------------SECCIÓN CONTACTO--------------*/
+
+.datos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+.formularioContacto{
+    line-height: 30px;
+}
+
+.mensajeBonito{
+    padding-left: 5%;
+}
+
+.textoContacto{
+    @include propiedadesTexto(20px,$rosa,center); 
+    font-style: italic;
+}

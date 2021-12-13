@@ -1,0 +1,84 @@
+/*---------------------ETIQUETAS Y CLASES GLOBALES---------------*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+ 
+
+body {
+    background-color: $fondo;
+}
+
+.titulo{
+    @include propiedadesTexto(50px,$negro,left); 
+    font-style: italic;
+    font-family: 'Dancing Script', cursive;
+}
+
+header {
+    width: 100%;
+    background-image: linear-gradient($rosa, $azul)
+}
+
+nav{
+    @include propiedadesTexto(20px,$negro,center); 
+    font-style: italic;
+    a{
+        margin-left: 20px;
+        display: inline-block;
+    }
+}
+
+a {
+    color: $negro;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+}
+
+p {
+    color: $negro;
+    line-height: 1.5;
+    font-family: 'Arial', sans-serif;
+    text-align: justify;
+    font-size: 15px;
+}
+
+h1 {
+    @include propiedadesTexto(40px,$morado,center); 
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.boton{
+    @include propiedadesTexto(15px,$morado,center); 
+    padding: 2px;
+    width: 40%;
+    font-weight: bold;
+    &:hover{
+        background-color: $azul;
+        color: $negro;
+    }
+}
+.card{
+    word-wrap: inherit;
+}
+
+.card-text{
+    padding: 10px;
+}
+
+.footer{
+    background-image: linear-gradient($azul, $rosa);
+    color: $morado;
+    margin-right: 0px;
+}
+
+.logoFooter{
+    width: 40%;
+    padding-left: 2%;
+    padding-top: 2%;
+}
+
+

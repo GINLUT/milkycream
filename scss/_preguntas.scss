@@ -1,0 +1,18 @@
+
+/*---------SECCIÓN PREGUNTAS FRECUENTES--------*/
+.boxPreguntas{
+    padding: 10px;
+    border: 2px groove;
+    border-color: $morado;
+    margin: 22px;
+    background-color: azure;
+}
+
+.botonPreguntas{
+    @extend .boton;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    width: 100%;
+    font-size: 15px;
+}

@@ -1,0 +1,98 @@
+/*-------------------------RESPONSIVE - GENERALES--------------------------*/
+@media all and (max-width: 599px) {
+  h1 {
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+  .logoFooter{
+    width: 70%;
+  }
+}
+
+
+@media (min-width: 600px) and (max-width: 768px) {
+  h1 {
+    font-size: 35px;
+    padding-top: 10px;
+    padding-bottom: 10px; }
+
+  }
+
+/*-------------------------RESPONSIVE - INICIO--------------------------*/
+
+@media all and (max-width: 599px) {
+    .productos{
+      font-size: 22px;
+    }
+    .cardEntrega{
+      width: 100%;    
+    }
+    .subtitulo{
+      font-size:15px;
+    }
+    .video {
+      width: 100%;
+      height: 400px; }
+  }
+
+  @media (min-width: 600px) and (max-width: 768px) {
+    .productos{
+      font-size: 28px;
+    }
+    .cardEntrega{
+      width: 100%;    
+    } 
+    .subtitulo{
+      font-size:18px;
+    }
+    .video {
+      width: 100%;
+      height: 500px; }
+    }
+
+/*-------------------------RESPONSIVE - PEDIDOS A TU MEDIDA-------------------------*/
+
+@media all and (max-width: 768px) {
+  .galleriaCatering{
+    display: none;
+  }
+  .input-group-text{
+    font-size: 14px;
+  }
+  .boton{
+    font-size: 12px;
+  }
+}
+
+
+
+
+
+
+/*-------------------------RESPONSIVE - PEDIDOS A TU MEDIDA-------------------------*/
+
+@media all and (max-width: 768px) {
+  .galleriaCatering{
+    display: none;
+  }
+  .input-group-text{
+    font-size: 14px;
+  }
+  .boton{
+    font-size: 12px;
+  }
+}
+
+/*-------------------------RESPONSIVE - CONTACTO--------------------------*/
+
+@media all and (max-width: 599px) {
+  .textoContacto{
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .textoContacto{
+    font-size: 19px;
+  }
+}

@@ -1,0 +1,5 @@
+@mixin propiedadesTexto ($font-size,$color,$text-align){
+    font-size: $font-size;
+    color: $color;
+    text-align: $text-align;
+}

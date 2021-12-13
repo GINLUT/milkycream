@@ -1,0 +1,16 @@
+/*-------- SECCION PRODUCTOS---------------*/
+
+
+.cajaProducto{
+    @extend .productos;
+        height: 75px;
+}
+
+.pideAqui{
+    @include propiedadesTexto(30px,$morado,center); 
+    font-style: italic;
+    background-color: azure;
+    border-radius: 5%;
+}
+
+

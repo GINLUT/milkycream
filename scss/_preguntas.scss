@@ -10,9 +10,7 @@
 
 .botonPreguntas{
     @extend .boton;
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
+    @include flex (flex,row,left); 
     width: 100%;
     font-size: 15px;
 }

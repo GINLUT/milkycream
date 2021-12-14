@@ -3,3 +3,9 @@
     color: $color;
     text-align: $text-align;
 }
+
+@mixin flex ($display,$flex-direction,$justify-content){
+    display: $display;
+    flex-direction: $flex-direction;
+    justify-content: $justify-content;
+}

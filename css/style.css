@@ -95,13 +95,13 @@ h1 {
   font-size: 40px;
   color: #921176;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   background-image: url(../images/fondo-pedir.jpg);
   background-repeat: repeat;
   font-weight: bold;
   padding: 10px 0px 10px 0px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
   height: 55vh; }
 
 .cardEntrega {

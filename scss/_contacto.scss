@@ -1,9 +1,7 @@
 /*---------------SECCIÓN CONTACTO--------------*/
 
 .datos{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    @include flex (flex,row,space-evenly); 
     align-items: center;
 }
 

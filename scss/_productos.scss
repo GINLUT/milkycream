@@ -2,15 +2,22 @@
 
 
 .cajaProducto{
-    @extend .productos;
-    height: 75px;
+    @include propiedadesTexto(20px,$azul,center); 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 11vh;
 }
 
 .pideAqui{
     @include propiedadesTexto(30px,$morado,center); 
     font-style: italic;
-    background-color: azure;
+    background-color:$fondo;
     border-radius: 5%;
+}
+
+.fondoPideAqui{
+    background-color:$azure;
 }
 
 

@@ -50,24 +50,12 @@
       height: 500px; }
     }
 
-/*-------------------------RESPONSIVE - PEDIDOS A TU MEDIDA-------------------------*/
+/*-------------------------RESPONSIVE - PRODUCTOS-------------------------*/
 
-@media all and (max-width: 768px) {
-  .galleriaCatering{
-    display: none;
-  }
-  .input-group-text{
-    font-size: 14px;
-  }
-  .boton{
-    font-size: 12px;
-  }
+@media all and (max-width: 599px) {
+  .cajaProducto{
+    height: 4vh;}
 }
-
-
-
-
-
 
 /*-------------------------RESPONSIVE - PEDIDOS A TU MEDIDA-------------------------*/
 

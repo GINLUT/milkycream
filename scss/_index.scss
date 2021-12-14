@@ -23,21 +23,21 @@
     background-repeat: repeat;
     font-weight: bold;
     padding: 10px 0px 10px 0px;
-    height: 55vh;
+    height: 50%;
 }
 
 .cardEntrega{
     background-color: #ffffff10;
     backdrop-filter: blur(2px);
     border: 1px solid $azul;
-    width: 50%;
+    width: 40%;
     border-radius: 1%;
 }
 
 .entrega{
     border: 1px solid $negro;
     margin: 3%;
-    height: 20vh;
+    height: 15vh;
     &:hover{
         background-image: linear-gradient(#c0f9f1, $azul);
     }

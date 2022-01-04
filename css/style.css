@@ -17,7 +17,7 @@ body {
 
 header {
   width: 100%;
-  background-image: linear-gradient(#f378d8, #66d6e0); }
+  background-image: linear-gradient(#e448c2, #66d6e0); }
 
 nav {
   font-size: 20px;
@@ -67,7 +67,7 @@ h1 {
   padding: 10px; }
 
 .footer {
-  background-image: linear-gradient(#66d6e0, #f378d8);
+  background-image: linear-gradient(#66d6e0, #e448c2);
   color: #921176;
   margin-right: 0px; }
 
@@ -87,6 +87,9 @@ h1 {
   width: 80%;
   text-align: center;
   border-radius: 10px; }
+
+.cardPrincipales {
+  margin: 1%; }
 
 .botonProductos {
   width: 100%; }
@@ -147,18 +150,44 @@ h1 {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   height: 11vh; }
+
+.fondoCard {
+  background-color: azure; }
 
 .pideAqui {
   font-size: 30px;
   color: #921176;
   text-align: center;
   font-style: italic;
-  background-color: #fff7f7;
   border-radius: 5%; }
 
 .fondoPideAqui {
   background-color: azure; }
+
+.precio {
+  font-size: 20px;
+  color: #921176;
+  text-align: center;
+  font-weight: bold; }
+
+.descripcion {
+  font-size: 17px;
+  color: black;
+  text-align: center; }
+
+.boxProductos {
+  height: 35vh; }
+
+.card-text {
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: wrap;
+  text-align: center; }
+
+.productos {
+  padding: 0% 1% 1% 1%; }
 
 /*------------SECCIÓN PEDIDOS A TU MEDIDA-------*/
 .seccionesPedidos {
@@ -170,13 +199,15 @@ h1 {
 
 .fotosCatering {
   width: 400px;
-  padding: 1%;
-  align-self: center; }
+  padding: 1%; }
 
 .galleriaCatering {
   display: flex;
   flex-direction: column;
   align-items: center; }
+
+.cajaFormulario {
+  margin-left: 2%; }
 
 /*---------SECCIÓN PREGUNTAS FRECUENTES--------*/
 .boxPreguntas {
@@ -201,14 +232,15 @@ h1 {
   align-items: center; }
 
 .formularioContacto {
-  line-height: 30px; }
+  line-height: 30px;
+  padding-right: 5%; }
 
 .mensajeBonito {
   padding-left: 5%; }
 
 .textoContacto {
   font-size: 20px;
-  color: #f378d8;
+  color: #e448c2;
   text-align: center;
   font-style: italic; }
 
@@ -219,29 +251,35 @@ h1 {
     padding-top: 10px;
     padding-bottom: 10px; }
   .logoFooter {
-    width: 70%; } }
+    width: 45%; } }
 
 @media (min-width: 600px) and (max-width: 768px) {
   h1 {
     font-size: 35px;
     padding-top: 10px;
-    padding-bottom: 10px; } }
+    padding-bottom: 10px; }
+  .logoFooter {
+    width: 45%; } }
 
 /*-------------------------RESPONSIVE - INICIO--------------------------*/
 @media all and (max-width: 599px) {
   .productos {
     font-size: 22px; }
+  .entrega {
+    height: 22vh; }
   .cardEntrega {
     width: 100%; }
   .subtitulo {
     font-size: 15px; }
   .video {
     width: 100%;
-    height: 400px; } }
+    height: 300px; } }
 
 @media (min-width: 600px) and (max-width: 768px) {
   .productos {
     font-size: 28px; }
+  .entrega {
+    height: 20vh; }
   .cardEntrega {
     width: 100%; }
   .subtitulo {
@@ -253,7 +291,11 @@ h1 {
 /*-------------------------RESPONSIVE - PRODUCTOS-------------------------*/
 @media all and (max-width: 599px) {
   .cajaProducto {
-    height: 4vh; } }
+    height: 6vh; }
+  .boxProductos {
+    height: 27vh; }
+  .card {
+    margin-bottom: 2%; } }
 
 /*-------------------------RESPONSIVE - PEDIDOS A TU MEDIDA-------------------------*/
 @media all and (max-width: 768px) {
@@ -262,7 +304,7 @@ h1 {
   .input-group-text {
     font-size: 14px; }
   .boton, .botonProductos, .botonPreguntas {
-    font-size: 12px; } }
+    font-size: 13px; } }
 
 /*-------------------------RESPONSIVE - CONTACTO--------------------------*/
 @media all and (max-width: 599px) {

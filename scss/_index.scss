@@ -11,6 +11,10 @@
     border-radius: 10px;
 }
 
+.cardPrincipales{
+    margin: 1%;
+}
+
 .botonProductos{
     @extend .boton;
     width: 100%;

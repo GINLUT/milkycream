@@ -6,18 +6,45 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: center;
     height: 11vh;
+}
+
+.fondoCard{
+    background-color: $azure;
 }
 
 .pideAqui{
     @include propiedadesTexto(30px,$morado,center); 
     font-style: italic;
-    background-color:$fondo;
     border-radius: 5%;
 }
 
 .fondoPideAqui{
-    background-color:$azure;
+    background-color: $azure;
 }
 
+.precio{
+    @include propiedadesTexto(20px,$morado,center);
+    font-weight: bold;
+}
+
+.descripcion{
+    @include propiedadesTexto(17px,$negro,center); 
+}
+
+.boxProductos{
+    height: 35vh;
+}
+
+.card-text{
+    padding-bottom: 0;
+    display: flex;
+    flex-direction: wrap;
+    text-align: center;
+}
+
+.productos{
+    padding: 0% 1% 1% 1%;
+}
 

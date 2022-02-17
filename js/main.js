@@ -180,7 +180,7 @@ function agregarAlCarrito(codigo) {
                 localStorage.setItem('carrito', JSON.stringify(carrito))
             } else {
                 productoAgregar.cantidad = productoAgregar.cantidad - 1
-                document.getElementById(`cantidad${productoAgregar.codigo}`).innerHTML = `<p id="cantidad${productoAgregar.codigo}">Cantidad:${productoAgregar.cantidad}</p>`
+                document.getElementById(`cantidad${productoAgregar.codigo}`).innerHTML = `<h3 id="cantidad${productoAgregar.codigo}">Cantidad:${productoAgregar.cantidad}</h3>`
                 actualizarCarrito()
                 localStorage.setItem('carrito', JSON.stringify(carrito))
             }

@@ -49,14 +49,14 @@ h1 {
   padding-top: 10px;
   padding-bottom: 10px; }
 
-.boton, .botonProductos, .botonPreguntas {
+.boton, .botonProductos, .botonEliminar, .botonPreguntas {
   font-size: 15px;
   color: #921176;
   text-align: center;
   padding: 2px;
   width: 40%;
   font-weight: bold; }
-  .boton:hover, .botonProductos:hover, .botonPreguntas:hover {
+  .boton:hover, .botonProductos:hover, .botonEliminar:hover, .botonPreguntas:hover {
     background-color: #66d6e0;
     color: black; }
 
@@ -77,6 +77,9 @@ h1 {
   padding-top: 2%; }
 
 /*-----------------SECCIÓN INICIO---------------*/
+h3 {
+  font-size: 18px; }
+
 .productos {
   font-size: 25px;
   color: #66d6e0;
@@ -153,7 +156,7 @@ h1 {
   justify-content: center;
   height: 11vh; }
 
-.fondoCard {
+.fondoCard, .productoEnCarrito {
   background-color: azure; }
 
 .pideAqui {
@@ -188,6 +191,14 @@ h1 {
 
 .productos {
   padding: 0% 1% 1% 1%; }
+
+.botonEliminar {
+  width: 100%;
+  color: #921176; }
+
+.productoEnCarrito {
+  text-align: left;
+  padding: 5%; }
 
 /*------------SECCIÓN PEDIDOS A TU MEDIDA-------*/
 .seccionesPedidos {
@@ -303,7 +314,7 @@ h1 {
     display: none; }
   .input-group-text {
     font-size: 14px; }
-  .boton, .botonProductos, .botonPreguntas {
+  .boton, .botonProductos, .botonEliminar, .botonPreguntas {
     font-size: 13px; } }
 
 /*-------------------------RESPONSIVE - CONTACTO--------------------------*/

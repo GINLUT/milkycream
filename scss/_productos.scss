@@ -1,8 +1,7 @@
 /*-------- SECCION PRODUCTOS---------------*/
 
-
-.cajaProducto{
-    @include propiedadesTexto(20px,$azul,center); 
+.cajaProducto {
+    @include propiedadesTexto(20px, $azul, center);
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -10,41 +9,52 @@
     height: 11vh;
 }
 
-.fondoCard{
+.fondoCard {
     background-color: $azure;
 }
 
-.pideAqui{
-    @include propiedadesTexto(30px,$morado,center); 
+.pideAqui {
+    @include propiedadesTexto(30px, $morado, center);
     font-style: italic;
     border-radius: 5%;
 }
 
-.fondoPideAqui{
+.fondoPideAqui {
     background-color: $azure;
 }
 
-.precio{
-    @include propiedadesTexto(20px,$morado,center);
+.precio {
+    @include propiedadesTexto(20px, $morado, center);
     font-weight: bold;
 }
 
-.descripcion{
-    @include propiedadesTexto(17px,$negro,center); 
+.descripcion {
+    @include propiedadesTexto(17px, $negro, center);
 }
 
-.boxProductos{
+.boxProductos {
     height: 35vh;
 }
 
-.card-text{
+.card-text {
     padding-bottom: 0;
     display: flex;
     flex-direction: wrap;
     text-align: center;
 }
 
-.productos{
+.productos {
     padding: 0% 1% 1% 1%;
 }
 
+.botonEliminar {
+    @extend .boton;
+    width: 100%;
+    color: $morado;
+}
+
+.productoEnCarrito {
+    @extend .fondoCard;
+    text-align: left;
+    padding: 5%;
+}

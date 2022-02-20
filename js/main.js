@@ -12,6 +12,7 @@ const productos = [{
         idHTML: "maravillas",
         descripcion: "Helado de chocolate, chantilly, chocolisto, minibrownies, nutella y gotas de chocolate.",
         cantidad: 1,
+        promocion: true,
     },
 
     {
@@ -22,6 +23,7 @@ const productos = [{
         idHTML: "frutos",
         descripcion: "Helado de Fresa y vainilla con salsa de fresa, crema chantilly y cerezas",
         cantidad: 1,
+        promocion: false,
     },
 
     {
@@ -32,6 +34,7 @@ const productos = [{
         idHTML: "import",
         descripcion: "Helado de chocolate, Ferrero Rocher, kinder bueno, nutella y gotas de chocolate.",
         cantidad: 1,
+        promocion: true,
     },
 
     {
@@ -42,6 +45,7 @@ const productos = [{
         idHTML: "genovesa",
         descripcion: "Helado Tres leches, chantilly, arequipe, salsa de chocolate y piazza",
         cantidad: 1,
+        promocion: true,
     },
     {
         codigo: 5,
@@ -51,6 +55,7 @@ const productos = [{
         idHTML: "arcoiris",
         descripcion: "Helado napolitano, chantilly, salsa de fresa, golochips y aros Trululú.",
         cantidad: 1,
+        promocion: false,
     },
     {
         codigo: 6,
@@ -60,6 +65,7 @@ const productos = [{
         idHTML: "pinguinitos",
         descripcion: "Helado de chocolate, chantilly, salsa de chocolate, Pingüinitos y piazza",
         cantidad: 1,
+        promocion: false,
     },
     {
         codigo: 7,
@@ -69,6 +75,7 @@ const productos = [{
         idHTML: "minichips",
         descripcion: "Helado de vainilla, chantilly, minichips, piazza y salsa de chocolate",
         cantidad: 1,
+        promocion: false,
     },
     {
         codigo: 8,
@@ -78,12 +85,14 @@ const productos = [{
         idHTML: "brownie",
         descripcion: "Helado de brownie, chantilly, arequipe, minibrownie, salsa de chocolate y piazza",
         cantidad: 1,
+        promocion: false,
     },
 ]
 
-const contenedorProductos = document.querySelector(".productos");
-const productosAgregados = document.querySelector('.productos-carrito');
-const totalCarrito = document.getElementById('total-carrito');
+
+const contenedorProductos = document.querySelector(".productos"),
+    productosAgregados = document.querySelector('.productos-carrito'),
+    totalCarrito = document.getElementById('total-carrito');
 
 
 
@@ -135,6 +144,19 @@ function agregarCajaProducto(producto) {
 
     botonesAgregar[0].addEventListener('click', () => {
         agregarAlCarrito(producto.codigo)
+        Toastify({
+            text: "Producto añadido al carrito",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            stopOnFocus: true,
+            style: {
+                background: "#e448c2",
+            },
+            onClick: function() {} // Callback after click
+        }).showToast();
     })
 
     botonesAgregar[1].addEventListener('click', () => {
@@ -144,26 +166,31 @@ function agregarCajaProducto(producto) {
 
 // recorre el arreglo del carrito sumando los precios de los productos seleccionados
 
-function agregarAlCarrito(codigo) {
-    let articuloRepetido = carrito.find(buscar => buscar.codigo == codigo)
-    if (articuloRepetido) {
+function agregarAlCarrito(codigoProducto) {
+    let articuloRepetido = carrito.find(buscar => buscar.codigo == codigoProducto)
+
+    if (articuloRepetido) { // DESTRUCTURACIÓN
+        const { codigo, cantidad } = articuloRepetido
         articuloRepetido.cantidad += 1
-        document.getElementById(`cantidad${articuloRepetido.codigo}`).innerHTML = `<h3 id="cantidad${articuloRepetido.codigo}">Cantidad:${articuloRepetido.cantidad}</h3>`
+        document.getElementById(`cantidad${codigo}`).innerHTML = `<h3 id="cantidad${codigo}">Cantidad:${cantidad}</h3>`
 
         actualizarCarrito()
 
-    } else {
-        let productoAgregar = productos.find(elemento => elemento.codigo == codigo)
+    } else { // DESTRUCTURACIÓN
+
+        let productoAgregar = productos.find(elemento => elemento.codigo == codigoProducto)
+        const { codigo, nombre, precio, img, idHTML, cantidad } = productoAgregar
         carrito.push(productoAgregar)
         actualizarCarrito()
 
         let div = document.createElement('div')
         div.className = 'productoEnCarrito'
         div.innerHTML = `
-                        <h3>${productoAgregar.nombre}</h3>
-                        <h3>Precio: $${productoAgregar.precio}</h3>
-                        <h3 id="cantidad${productoAgregar.codigo}">Cantidad:${productoAgregar.cantidad}</h3>
-                        <button id="btnEliminar${productoAgregar.codigo}" class="botonEliminar"> Eliminar</button>
+        <img class="fotosProductos img-fluid rounded mx-auto d-block" data-bs-toggle="modal" data-bs-target="#${idHTML}" src="${img}" alt="${nombre}">
+                        <h3>${nombre}</h3>
+                        <h3>Precio: $${precio}</h3>
+                        <h3 id="cantidad${codigo}">Cantidad:${cantidad}</h3>
+                        <button id="btnEliminar${codigo}" class="botonEliminar"> Eliminar</button>
                         `
 
         productosAgregados.appendChild(div)
@@ -178,6 +205,19 @@ function agregarAlCarrito(codigo) {
                 carrito = carrito.filter(item => item.codigo != productoAgregar.codigo)
                 actualizarCarrito()
                 localStorage.setItem('carrito', JSON.stringify(carrito))
+                Toastify({
+                    text: "Producto eliminado del carrito",
+                    duration: 3000,
+                    newWindow: true,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    stopOnFocus: true,
+                    style: {
+                        background: "#66d6e0",
+                    },
+                    onClick: function() {} // Callback after click
+                }).showToast();
             } else {
                 productoAgregar.cantidad = productoAgregar.cantidad - 1
                 document.getElementById(`cantidad${productoAgregar.codigo}`).innerHTML = `<h3 id="cantidad${productoAgregar.codigo}">Cantidad:${productoAgregar.cantidad}</h3>`
@@ -192,7 +232,12 @@ function agregarAlCarrito(codigo) {
 
 //Actualiza y suma los items en el carrito
 function actualizarCarrito() {
-    totalCarrito.innerText = carrito.reduce((acc, el) => acc + (el.precio * el.cantidad), 0)
+    const precios = carrito.map((el) => (el.promocion ? el.precio * 0.9 : el.precio) * el.cantidad)
+    totalCarrito.innerText = calcularTotal(...precios) //SPREAD
+}
+
+function calcularTotal(...precios) { //SPREAD
+    return precios.reduce((acc, n) => acc + n, 0)
 }
 
 
@@ -204,6 +249,7 @@ function recuperarCarrito() {
             agregarAlCarrito(element.codigo)
         });
     }
+
 }
 
 recuperarCarrito()

@@ -200,24 +200,29 @@ function agregarAlCarrito(codigoProducto) {
         let btnEliminar = document.getElementById(`btnEliminar${productoAgregar.codigo}`)
 
         btnEliminar.addEventListener('click', () => {
-            if (productoAgregar.cantidad == 1) {
-                btnEliminar.parentElement.remove()
-                carrito = carrito.filter(item => item.codigo != productoAgregar.codigo)
-                actualizarCarrito()
-                localStorage.setItem('carrito', JSON.stringify(carrito))
-                Toastify({
-                    text: "Producto eliminado del carrito",
-                    duration: 3000,
-                    newWindow: true,
-                    close: true,
-                    gravity: "top",
-                    position: "right",
-                    stopOnFocus: true,
-                    style: {
-                        background: "#66d6e0",
-                    },
-                    onClick: function() {} // Callback after click
-                }).showToast();
+            if (carrito.find(elemento => elemento.codigo == codigoProducto).cantidad == 1) {
+                Swal.fire({
+                    title: `¿Deseas eliminar ${productoAgregar.nombre} del carrito?`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Eliminar'
+                }).then((result) => {
+                    console.log(result)
+                    if (result.isConfirmed) {
+                        Swal.fire(
+                            'Eliminado',
+                            ` ${productoAgregar.nombre} ha sido eliminado del carrito`,
+                            'success')
+                        btnEliminar.parentElement.remove()
+                        carrito = carrito.filter(item => item.codigo != productoAgregar.codigo)
+                        actualizarCarrito()
+                        localStorage.setItem('carrito', JSON.stringify(carrito))
+                    }
+                })
+
+
             } else {
                 productoAgregar.cantidad = productoAgregar.cantidad - 1
                 document.getElementById(`cantidad${productoAgregar.codigo}`).innerHTML = `<h3 id="cantidad${productoAgregar.codigo}">Cantidad:${productoAgregar.cantidad}</h3>`

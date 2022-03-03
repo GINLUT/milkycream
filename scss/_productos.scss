@@ -39,8 +39,8 @@
 .card-text {
     padding-bottom: 0;
     display: flex;
-    flex-direction: wrap;
-    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .productos {
@@ -48,13 +48,109 @@
 }
 
 .botonEliminar {
-    @extend .boton;
+    color: $morado;
+    background-color: $azure;
+    border: none;
+    font-size: 20px;
+}
+
+.botonEliminar :hover {
+    cursor: pointer;
+}
+
+.botonEliminar :focus {
+    outline: none;
+}
+
+#botonCarrito {
+    font-size: 25px;
+    border: none;
+    color: $morado;
+    border-radius: 40%;
+    padding: 10px;
+    transition: all .3s;
+}
+
+#botonCarrito:hover {
+    cursor: pointer;
+    color: $fondo;
+    background-color: $morado;
+}
+
+#botonCarrito:focus {
+    outline: none;
+}
+
+.modal-contenedor {
+    position: fixed;
+    top: 0;
     width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+}
+
+.modal-carrito {
+    position: relative;
+    background-color: $azure;
+    min-width: 500px;
+    padding: 20px;
+    transition: all .5s;
+}
+
+.modal-active .modal-carrito {
+    margin-top: 0;
+}
+
+.modal-carrito {
     color: $morado;
 }
 
+.modal-carrito #carritoCerrar {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 20px;
+    color: $morado;
+    border: none;
+    background-color: $azure;
+}
+
+.modal-carrito #carritoCerrar:hover {
+    cursor: pointer;
+}
+
+.modal-carrito #carritoCerrar:focus {
+    outline: none;
+}
+
+.modal-carrito .precioProducto {
+    padding-top: 10px;
+}
+
 .productoEnCarrito {
-    @extend .fondoCard;
-    text-align: left;
-    padding: 5%;
+    border-left: 5px solid lightblue;
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.productoEnCarrito:hover {
+    border-left: 5px solid $rosa;
 }

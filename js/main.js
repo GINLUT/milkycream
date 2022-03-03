@@ -4,102 +4,39 @@ let total = 0;
 
 let carrito = []
 
-const productos = [{
-        codigo: 1,
-        nombre: "7 maravillas del chocolate",
-        precio: 6200,
-        img: "../images/7-maravillas.jpg",
-        idHTML: "maravillas",
-        descripcion: "Helado de chocolate, chantilly, chocolisto, minibrownies, nutella y gotas de chocolate.",
-        cantidad: 1,
-        promocion: true,
-    },
-
-    {
-        codigo: 2,
-        nombre: "Frutos Rojos",
-        precio: 3500,
-        img: "../images/frutos-rojos.jpg",
-        idHTML: "frutos",
-        descripcion: "Helado de Fresa y vainilla con salsa de fresa, crema chantilly y cerezas",
-        cantidad: 1,
-        promocion: false,
-    },
-
-    {
-        codigo: 3,
-        nombre: "Import",
-        precio: 8500,
-        img: "../images/import-xxl.jpg",
-        idHTML: "import",
-        descripcion: "Helado de chocolate, Ferrero Rocher, kinder bueno, nutella y gotas de chocolate.",
-        cantidad: 1,
-        promocion: true,
-    },
-
-    {
-        codigo: 4,
-        nombre: "Malteada Genovesa",
-        precio: 4500,
-        img: "../images/genovesa.jpg",
-        idHTML: "genovesa",
-        descripcion: "Helado Tres leches, chantilly, arequipe, salsa de chocolate y piazza",
-        cantidad: 1,
-        promocion: true,
-    },
-    {
-        codigo: 5,
-        nombre: "Arcoiris",
-        precio: 5500,
-        img: "../images/arcoiris-xxl.jpg",
-        idHTML: "arcoiris",
-        descripcion: "Helado napolitano, chantilly, salsa de fresa, golochips y aros Trululú.",
-        cantidad: 1,
-        promocion: false,
-    },
-    {
-        codigo: 6,
-        nombre: "Malteada Pingüinitos",
-        precio: 4000,
-        img: "../images/pinguinitos.jpg",
-        idHTML: "pinguinitos",
-        descripcion: "Helado de chocolate, chantilly, salsa de chocolate, Pingüinitos y piazza",
-        cantidad: 1,
-        promocion: false,
-    },
-    {
-        codigo: 7,
-        nombre: "Minichips 2x1",
-        precio: 4000,
-        img: "../images/minichips-2x1.jpg",
-        idHTML: "minichips",
-        descripcion: "Helado de vainilla, chantilly, minichips, piazza y salsa de chocolate",
-        cantidad: 1,
-        promocion: false,
-    },
-    {
-        codigo: 8,
-        nombre: "Brownies 2x1",
-        precio: 4000,
-        img: "../images/brownie-2x1.jpg",
-        idHTML: "brownie",
-        descripcion: "Helado de brownie, chantilly, arequipe, minibrownie, salsa de chocolate y piazza",
-        cantidad: 1,
-        promocion: false,
-    },
-]
-
+let productos = []
 
 const contenedorProductos = document.querySelector(".productos"),
     productosAgregados = document.querySelector('.productos-carrito'),
-    totalCarrito = document.getElementById('total-carrito');
+    totalCarrito = document.getElementById('total-carrito'),
+    carritoAbrir = document.getElementById('botonCarrito'),
+    carritoCerrar = document.getElementById('carritoCerrar'),
+    contadorCarrito = document.getElementById('contadorCarrito');
 
+const contenedorModal = document.getElementsByClassName('modal-contenedor')[0],
+    modalCarrito = document.getElementsByClassName('modal-carrito')[0];
 
+carritoAbrir.addEventListener('click', () => {
+    contenedorModal.classList.toggle('modal-active')
+})
+carritoCerrar.addEventListener('click', () => {
+    contenedorModal.classList.toggle('modal-active')
+})
+modalCarrito.addEventListener('click', (e) => {
+    e.stopPropagation()
+})
+contenedorModal.addEventListener('click', () => {
+    carritoCerrar.click()
+})
 
 /*DECLARACIÓN DE FUNCIONES*/
+async function mostrarProductos() {
+    const resp = await fetch("../productos.json")
+    productos = await resp.json()
+    listaProductos();
+}
 
-listaProductos();
-
+mostrarProductos()
 
 //Recorre todos los productos y los agrega al HTML
 function listaProductos() {
@@ -118,13 +55,13 @@ function agregarCajaProducto(producto) {
         <div class="col-md-5 boxProductos">
             <h2 class="card-header cajaProducto">${producto.nombre}</h2>
             <p class="card-text">${producto.descripcion}</p>
-            <p class="precio">${producto.precio}</p>
+            <p class="precio"> $ ${producto.precio}</p>
         </div>
         <div class="col-md-7 d-flex align-items-center">
             <img class="fotosProductos img-fluid rounded mx-auto d-block" data-bs-toggle="modal" data-bs-target="#${producto.idHTML}" src="${producto.img}" alt="${producto.nombre}">
         </div>
         <div class="card-footer">
-            <input type="submit" class="botonProductos boton${producto.codigo}" value="Agregar al Carrito" />
+            <input type="submit" class="botonProductos boton${producto.codigo}" value=" Agregar al Carrito" />
         </div>
         <div class="modal fade" id="${producto.idHTML}">
             <div class="modal-dialog modal-dialog-centered">
@@ -170,30 +107,32 @@ function agregarAlCarrito(codigoProducto) {
     let articuloRepetido = carrito.find(buscar => buscar.codigo == codigoProducto)
 
     if (articuloRepetido) { // DESTRUCTURACIÓN
-        const { codigo, cantidad } = articuloRepetido
+        const { codigo } = articuloRepetido
         articuloRepetido.cantidad += 1
-        document.getElementById(`cantidad${codigo}`).innerHTML = `<h3 id="cantidad${codigo}">Cantidad:${cantidad}</h3>`
+        document.getElementById(`cantidad${codigo}`).innerHTML =
+            `<p id="cantidad${codigo}">Cantidad:${articuloRepetido.cantidad}</p>`
 
         actualizarCarrito()
 
     } else { // DESTRUCTURACIÓN
 
         let productoAgregar = productos.find(elemento => elemento.codigo == codigoProducto)
-        const { codigo, nombre, precio, img, idHTML, cantidad } = productoAgregar
+        const { codigo, nombre, precio, cantidad } = productoAgregar
         carrito.push(productoAgregar)
         actualizarCarrito()
 
         let div = document.createElement('div')
         div.className = 'productoEnCarrito'
         div.innerHTML = `
-        <img class="fotosProductos img-fluid rounded mx-auto d-block" data-bs-toggle="modal" data-bs-target="#${idHTML}" src="${img}" alt="${nombre}">
-                        <h3>${nombre}</h3>
-                        <h3>Precio: $${precio}</h3>
-                        <h3 id="cantidad${codigo}">Cantidad:${cantidad}</h3>
-                        <button id="btnEliminar${codigo}" class="botonEliminar"> Eliminar</button>
+                        <p>${nombre}</p>
+                        <p>Precio: $${precio}</p>
+                        <p id="cantidad${codigo}">Cantidad:${cantidad}</p>
+                        <button id="btnEliminar${codigo}" class="botonEliminar"><i class="fas fa-trash-alt"></i></button>
                         `
 
-        productosAgregados.appendChild(div)
+
+
+        modalCarrito.appendChild(div)
 
         // Se crea el boton para eliminar productos del carrito
 
@@ -225,7 +164,7 @@ function agregarAlCarrito(codigoProducto) {
 
             } else {
                 productoAgregar.cantidad = productoAgregar.cantidad - 1
-                document.getElementById(`cantidad${productoAgregar.codigo}`).innerHTML = `<h3 id="cantidad${productoAgregar.codigo}">Cantidad:${productoAgregar.cantidad}</h3>`
+                document.getElementById(`cantidad${productoAgregar.codigo}`).innerHTML = `<p id="cantidad${productoAgregar.codigo}">Cantidad:${productoAgregar.cantidad}</p>`
                 actualizarCarrito()
                 localStorage.setItem('carrito', JSON.stringify(carrito))
             }
@@ -238,6 +177,7 @@ function agregarAlCarrito(codigoProducto) {
 //Actualiza y suma los items en el carrito
 function actualizarCarrito() {
     const precios = carrito.map((el) => (el.promocion ? el.precio * 0.9 : el.precio) * el.cantidad)
+    contadorCarrito.innerText = carrito.reduce((acc, el) => acc + el.cantidad, 0)
     totalCarrito.innerText = calcularTotal(...precios) //SPREAD
 }
 
@@ -247,14 +187,14 @@ function calcularTotal(...precios) { //SPREAD
 
 
 //Recupera los productos seleccionados en el carrito si se reinicia la página
-function recuperarCarrito() {
-    let recuperarLS = JSON.parse(localStorage.getItem('carrito'))
-    if (recuperarLS) {
-        recuperarLS.forEach(element => {
-            agregarAlCarrito(element.codigo)
-        });
-    }
+// function recuperarCarrito() {
+//     let recuperarLS = JSON.parse(localStorage.getItem('carrito'))
+//     if (recuperarLS) {
+//         recuperarLS.forEach(element => {
+//             agregarAlCarrito(element.codigo)
+//         });
+//     }
 
-}
+// }
 
-recuperarCarrito()
+// recuperarCarrito()

@@ -95,7 +95,25 @@ h1 {
   padding-top: 2%;
 }
 
+.carrito {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  padding-right: 3vh;
+}
+
 /*-----------------SECCIÓN INICIO---------------*/
+h3 {
+  font-size: 18px;
+}
+
 .productos {
   font-size: 25px;
   color: #66d6e0;
@@ -246,15 +264,141 @@ h1 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: wrap;
-          flex-direction: wrap;
-  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .productos {
   padding: 0% 1% 1% 1%;
+}
+
+.botonEliminar {
+  color: #921176;
+  background-color: azure;
+  border: none;
+  font-size: 20px;
+}
+
+.botonEliminar :hover {
+  cursor: pointer;
+}
+
+.botonEliminar :focus {
+  outline: none;
+}
+
+#botonCarrito {
+  font-size: 25px;
+  border: none;
+  color: #921176;
+  border-radius: 40%;
+  padding: 10px;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+#botonCarrito:hover {
+  cursor: pointer;
+  color: #fff7f7;
+  background-color: #921176;
+}
+
+#botonCarrito:focus {
+  outline: none;
+}
+
+.modal-contenedor {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 5;
+}
+
+.modal-carrito {
+  position: relative;
+  background-color: azure;
+  min-width: 500px;
+  padding: 20px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.modal-active .modal-carrito {
+  margin-top: 0;
+}
+
+.modal-carrito {
+  color: #921176;
+}
+
+.modal-carrito #carritoCerrar {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  color: #921176;
+  border: none;
+  background-color: azure;
+}
+
+.modal-carrito #carritoCerrar:hover {
+  cursor: pointer;
+}
+
+.modal-carrito #carritoCerrar:focus {
+  outline: none;
+}
+
+.modal-carrito .precioProducto {
+  padding-top: 10px;
+}
+
+.productoEnCarrito {
+  border-left: 5px solid lightblue;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  margin: 5px 0;
+  padding: 5px 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.productoEnCarrito:hover {
+  border-left: 5px solid #e448c2;
 }
 
 /*------------SECCIÓN PEDIDOS A TU MEDIDA-------*/
@@ -411,10 +555,22 @@ h1 {
 /*-------------------------RESPONSIVE - PRODUCTOS-------------------------*/
 @media all and (max-width: 599px) {
   .cajaProducto {
+    height: 4vh;
+  }
+  .boxProductos {
+    height: 15vh;
+  }
+  .card {
+    margin-bottom: 2%;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 768px) {
+  .cajaProducto {
     height: 6vh;
   }
   .boxProductos {
-    height: 27vh;
+    height: 16vh;
   }
   .card {
     margin-bottom: 2%;

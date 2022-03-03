@@ -1,0 +1,84 @@
+[{
+        "codigo": 1,
+        "nombre": "7 maravillas del chocolate",
+        "precio": 6200,
+        "img": "../images/7-maravillas.jpg",
+        "idHTML": "maravillas",
+        "descripcion": "Helado de chocolate, chantilly, chocolisto, minibrownies, nutella y gotas de chocolate.",
+        "cantidad": 1,
+        "promocion": true
+    },
+
+    {
+        "codigo": 2,
+        "nombre": "Frutos Rojos",
+        "precio": 3500,
+        "img": "../images/frutos-rojos.jpg",
+        "idHTML": "frutos",
+        "descripcion": "Helado de Fresa y vainilla con salsa de fresa, crema chantilly y cerezas",
+        "cantidad": 1,
+        "promocion": false
+    },
+
+    {
+        "codigo": 3,
+        "nombre": "Import",
+        "precio": 8500,
+        "img": "../images/import-xxl.jpg",
+        "idHTML": "import",
+        "descripcion": "Helado de chocolate, Ferrero Rocher, kinder bueno, nutella y gotas de chocolate.",
+        "cantidad": 1,
+        "promocion": true
+    },
+
+    {
+        "codigo": 4,
+        "nombre": "Malteada Genovesa",
+        "precio": 4500,
+        "img": "../images/genovesa.jpg",
+        "idHTML": "genovesa",
+        "descripcion": "Helado Tres leches, chantilly, arequipe, salsa de chocolate y piazza",
+        "cantidad": 1,
+        "promocion": true
+    },
+    {
+        "codigo": 5,
+        "nombre": "Arcoiris",
+        "precio": 5500,
+        "img": "../images/arcoiris-xxl.jpg",
+        "idHTML": "arcoiris",
+        "descripcion": "Helado napolitano, chantilly, salsa de fresa, golochips y aros Trululú.",
+        "cantidad": 1,
+        "promocion": false
+    },
+    {
+        "codigo": 6,
+        "nombre": "Malteada Pingüinitos",
+        "precio": 4000,
+        "img": "../images/pinguinitos.jpg",
+        "idHTML": "pinguinitos",
+        "descripcion": "Helado de chocolate, chantilly, salsa de chocolate, Pingüinitos y piazza",
+        "cantidad": 1,
+        "promocion": false
+    },
+    {
+        "codigo": 7,
+        "nombre": "Minichips 2x1",
+        "precio": 4000,
+        "img": "../images/minichips-2x1.jpg",
+        "idHTML": "minichips",
+        "descripcion": "Helado de vainilla, chantilly, minichips, piazza y salsa de chocolate",
+        "cantidad": 1,
+        "promocion": false
+    },
+    {
+        "codigo": 8,
+        "nombre": "Brownies 2x1",
+        "precio": 4000,
+        "img": "../images/brownie-2x1.jpg",
+        "idHTML": "brownie",
+        "descripcion": "Helado de brownie, chantilly, arequipe, minibrownie, salsa de chocolate y piazza",
+        "cantidad": 1,
+        "promocion": false
+    }
+]

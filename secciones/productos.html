@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="heladeria, waffles, milkshake, postre, catering, bucaramanga">
     <meta name="description" content="Prueba nuestros deliciosos Milkshakes, Waffles, Helados y mucho más.">
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
@@ -57,20 +58,37 @@
                 </div>
             </div>
         </nav>
+        <div>
+            <div class="carrito">
+                <button id="botonCarrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
+            </div>
+        </div>
+        <hr>
     </header>
     <!--fin de Primera Sección-->
 
     <div class="row g-0">
         <!--Segunda Sección: Productos-->
         <h1 class="col-12 fst-italic">Productos</h1>
-        <article class="col-lg-8 col-md-12 row g-0 productos">
+        <article class="col-lg-8 col-md-12 row g-0 productos ">
             <!-- SE LLENA EN EL JS-->
         </article>
+
+
+        <div class="modal-contenedor">
+            <div class="modal-carrito">
+                <h3>Carrito</h3>
+                <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+                <div id="carrito-contenedor">
+                </div>
+                <p class="precioProducto">Total Compra: $<span id="total-carrito"></span></p>
+            </div>
+        </div>
         <!--fin de Segunda Sección-->
 
         <aside class="pideAqui col-lg-4 col-md-12">
             <!--Tercera Sección: Pide Aquí-->
-            <form class="card sticky-top">
+            <form class="card">
                 <div class="card-body fondoPideAqui row g-0">
                     <h2 class="fst-italic card-title">Pide aquí</h2>
                     <div class="entrega col">
@@ -92,14 +110,11 @@
                     <input type="text" class="form-control" class="form-control" name="direccion" placeholder="Ingresa tu dirección" />
                 </div>
                 <div class="card-footer">
-
-
-                    <a href="#" class="btn btn-info d-flex justify-content-center align-items-end">Pedir</a>
+                    <a href="#" class="btn btn-info d-flex justify-content-center align-items-end">Comprar
+                    </a>
                 </div>
             </form>
-            <div class="productos-carrito">
-            </div>
-            <p class="precioProducto">Precio total: $<span id="total-carrito"></span></p>
+
         </aside>
         <!--fin de Tercera Sección-->
     </div>
